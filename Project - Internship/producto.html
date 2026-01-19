@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Producto | Importadora GK Asia Tica</title>
+  <meta name="description" content="Detalles del producto." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <style>
+    /* Extra styles solo para la página de producto */
+    .product-layout{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+      align-items:start;
+    }
+    .gallery{
+      display:grid;
+      gap: 12px;
+    }
+    .main-img{
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow:hidden;
+      box-shadow: var(--shadow-soft);
+      background: #fff;
+      height: 380px;
+    }
+    .main-img img{ width:100%; height:100%; object-fit:cover; }
+    .thumbs{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .thumbbtn{
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow:hidden;
+      background:#fff;
+      padding:0;
+      cursor:pointer;
+      height: 76px;
+      box-shadow: var(--shadow-soft);
+      opacity: .92;
+      transition: transform .12s ease, opacity .12s ease;
+    }
+    .thumbbtn:hover{ transform: translateY(-1px); opacity: 1; }
+    .thumbbtn img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    .price{
+      font-size: 22px;
+      font-weight: 950;
+      letter-spacing: -.2px;
+      color: var(--brand-red-2);
+      margin: 8px 0 6px;
+    }
+    .kv{
+      display:grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .kv-row{
+      display:flex;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,.08);
+      background: rgba(0,0,0,.02);
+      font-weight: 900;
+    }
+    .kv-row span:last-child{ color: var(--muted); font-weight: 900; text-align:right; }
+
+    .html-desc{
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    @media (max-width: 980px){
+      .product-layout{ grid-template-columns: 1fr; }
+      .thumbs{ grid-template-columns: repeat(3, 1fr); }
+      .main-img{ height: 320px; }
+    }
+  </style>
+</head>
+
+<body data-page="catalogo">
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="index.html">
+          <div class="logo" aria-hidden="true">GK</div>
+          <div>
+            <div class="brand-title">Importadora GK Asia Tica</div>
+            <div class="brand-sub">Telas • Cordones • Sublimación • Mayorista</div>
+          </div>
+        </a>
+
+        <nav>
+          <ul>
+            <li><a class="navlink" data-nav="home" href="index.html">Inicio</a></li>
+            <li><a class="navlink active" data-nav="catalogo" href="catalogo.html">Catálogo</a></li>
+            <li><a class="navlink" data-nav="empresa" href="empresa.html">Empresa</a></li>
+            <li><a class="navlink" data-nav="contacto" href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="actions">
+          <a class="btn btn-primary" id="btnCotizarTop" href="#" target="_blank" rel="noopener">Cotizar</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <div class="page-hero-card">
+          <span class="badge-pill" id="catPill">Producto</span>
+          <h1 class="page-title" id="pName">Nombre del producto</h1>
+          <p class="page-sub" id="pShort">Descripción corta del producto.</p>
+          <div class="spacer"></div>
+          <a class="btn btn-ghost" href="catalogo.html">← Volver al catálogo</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="product-layout">
+          <!-- Galería -->
+          <div class="gallery">
+            <div class="main-img" id="mainImg">
+              <div class="thumb-placeholder">TODO: coloca imágenes en data.js</div>
+            </div>
+            <div class="thumbs" id="thumbs"></div>
+          </div>
+
+          <!-- Detalles -->
+          <div class="panel">
+            <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start;">
+              <div>
+                <div class="small" style="font-weight:950;">SKU: <span id="pSku">---</span></div>
+                <div class="price" id="pPrice">Consultar</div>
+                <div class="small" id="pMoq">MOQ: —</div>
+              </div>
+              <a class="btn btn-primary" id="btnCotizar" href="#" target="_blank" rel="noopener">Me interesa</a>
+            </div>
+
+            <div class="spacer"></div>
+
+            <h3 style="margin:0 0 10px;">Especificaciones</h3>
+            <div class="kv" id="specList"></div>
+
+            <div class="spacer"></div>
+
+            <h3 style="margin:0 0 10px;">Descripción</h3>
+            <div class="html-desc" id="pDesc">
+              <!-- Se carga desde data.js -->
+            </div>
+
+            <div class="spacer"></div>
+
+            <h3 style="margin:0 0 10px;">Variantes</h3>
+            <div id="variants" class="small">—</div>
+
+            <div class="spacer"></div>
+
+            <div class="small">
+              <!-- TODO: Puedes reemplazar este mensaje -->
+              *Precios y disponibilidad se confirman por mensaje. Compra al mayor.
+            </div>
+          </div>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="panel">
+          <h3>¿Listo para cotizar?</h3>
+          <p>Haz clic en “Me interesa” y envíanos SKU, cantidad, color y ciudad.</p>
+          <div class="spacer"></div>
+          <a class="btn btn-primary" id="btnCotizarBottom" href="#" target="_blank" rel="noopener">Cotizar por Facebook</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <div style="font-weight:950;">Importadora GK Asia Tica</div>
+          <div class="small">© <span id="year"></span></div>
+        </div>
+        <div class="small">Catálogo informativo. Confirma stock por mensaje.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { initNav } from "./assets/js/app.js";
+    import { COMPANY_FACEBOOK_URL, categories, products } from "./assets/js/data.js";
+
+    initNav();
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    const p = products.find(x => x.id === id);
+
+    // Si no hay id válido, manda al catálogo
+    if(!p){
+      window.location.href = "catalogo.html";
+    }
+
+    // Link de cotización (placeholder)
+    // TODO: si luego quieres un link único por producto, ponlo en p.facebookUrl en data.js
+    const fb = (p.facebookUrl && p.facebookUrl.trim().length) ? p.facebookUrl : COMPANY_FACEBOOK_URL;
+
+    document.getElementById("btnCotizar").href = fb;
+    document.getElementById("btnCotizarTop").href = fb;
+    document.getElementById("btnCotizarBottom").href = fb;
+
+    // Encabezados
+    document.getElementById("pName").textContent = p.name;
+    document.getElementById("pShort").textContent = p.shortDescription || "";
+    document.getElementById("pSku").textContent = p.sku || "";
+    document.getElementById("pPrice").textContent = p.priceLabel || "Consultar";
+    document.getElementById("pMoq").textContent = `MOQ: ${p.moq || "Por definir"}`;
+
+    // Categoría pill
+    const cat = categories.find(c => c.key === p.category);
+    document.getElementById("catPill").textContent = cat ? cat.name : "Producto";
+
+    // Descripción (permite HTML controlado desde data.js)
+    // TODO: si no quieres HTML, guarda texto plano y usa textContent en vez de innerHTML
+    document.getElementById("pDesc").innerHTML = p.description || "";
+
+    // Especificaciones
+    const specEl = document.getElementById("specList");
+    const specs = p.specs || {};
+    const specPairs = [
+      ["Composición", specs.composition],
+      ["Ancho", specs.width],
+      ["Peso", specs.weight],
+      ["Acabado", specs.finish],
+      ["Uso", specs.use],
+    ].filter(([k,v]) => (v && String(v).trim().length));
+
+    if(specPairs.length === 0){
+      specEl.innerHTML = `<div class="small">TODO: agrega specs en data.js (composition, width, weight, etc.)</div>`;
+    } else {
+      specEl.innerHTML = specPairs.map(([k,v]) => `
+        <div class="kv-row"><span>${k}</span><span>${v}</span></div>
+      `).join("");
+    }
+
+    // Variantes
+    const v = p.variants || {};
+    const colors = (v.colors || []).filter(Boolean);
+    const sizes = (v.sizes || []).filter(Boolean);
+
+    const variantsEl = document.getElementById("variants");
+    if(colors.length === 0 && sizes.length === 0){
+      variantsEl.innerHTML = `TODO: agrega variantes en data.js (colors, sizes)`;
+    } else {
+      variantsEl.innerHTML = `
+        ${colors.length ? `<div><strong>Colores:</strong> ${colors.join(", ")}</div>` : ""}
+        ${sizes.length ? `<div><strong>Medidas / Opciones:</strong> ${sizes.join(", ")}</div>` : ""}
+      `;
+    }
+
+    // Galería
+    const imgs = (p.images || []).filter(x => x && String(x).trim().length);
+    const mainImgEl = document.getElementById("mainImg");
+    const thumbsEl = document.getElementById("thumbs");
+
+    function setMain(src, alt){
+      mainImgEl.innerHTML = `<img src="${src}" alt="${alt}" />`;
+    }
+
+    if(imgs.length === 0){
+      mainImgEl.innerHTML = `<div class="thumb-placeholder">TODO: agrega images[] en data.js</div>`;
+      thumbsEl.innerHTML = "";
+    } else {
+      setMain(imgs[0], p.name);
+      thumbsEl.innerHTML = imgs.slice(0, 8).map((src, i) => `
+        <button class="thumbbtn" type="button" data-src="${src}" aria-label="Ver imagen ${i+1}">
+          <img src="${src}" alt="${p.name} - ${i+1}" />
+        </button>
+      `).join("");
+
+      thumbsEl.querySelectorAll("button").forEach(btn => {
+        btn.addEventListener("click", () => setMain(btn.dataset.src, p.name));
+      });
+    }
+
+    // Year footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Importadora GK Asia Tica | Mayorista Textil</title>
+  <meta name="description" content="Venta y distribución al mayor de telas para uniformes, telas deportivas, cordones y sublimación textil." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body data-page="home">
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="index.html">
+          <div class="logo" aria-hidden="true">
+            <!-- TODO: Reemplaza por tu logo:
+              <imgE: <img src="assets/img/logo.png" alt="Importadora GK Asia Tica" />
+            -->
+            GK
+          </div>
+          <div>
+            <div class="brand-title">Importadora GK Asia Tica</div>
+            <div class="brand-sub">Telas • Cordones • Sublimación • Mayorista</div>
+          </div>
+        </a>
+
+        <nav>
+          <ul>
+            <li><a class="navlink" data-nav="home" href="index.html">Inicio</a></li>
+            <li><a class="navlink" data-nav="catalogo" href="catalogo.html">Catálogo</a></li>
+            <li><a class="navlink" data-nav="empresa" href="empresa.html">Empresa</a></li>
+            <li><a class="navlink" data-nav="contacto" href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="actions">
+          <a class="btn btn-ghost" href="catalogo.html">Ver catálogo</a>
+          <a class="btn btn-primary" data-company-facebook href="#" target="_blank" rel="noopener">Cotizar por Facebook</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <div class="page-hero-card">
+          <span class="badge-pill">Distribución al mayor • Importación • Atención rápida</span>
+          <h1 class="page-title">Telas para uniformes, telas deportivas, cordones y sublimación textil.</h1>
+          <p class="page-sub">
+            <!-- TODO: Ajusta tu propuesta de valor -->
+            Abastecemos talleres, marcas y revendedores con variedad, consistencia y soporte de compra al mayor.
+            Selecciona productos y cotiza directo por Facebook.
+          </p>
+
+          <div class="spacer"></div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="catalogo.html">Explorar productos</a>
+            <a class="btn btn-ghost" href="empresa.html">Conocer la empresa</a>
+            <a class="btn btn-ghost" data-company-facebook href="#" target="_blank" rel="noopener">Facebook</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Categorías principales</h2>
+            <p>Entra a una categoría y te lleva al catálogo filtrado.</p>
+          </div>
+        </div>
+
+        <div class="grid-4" id="cats"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Destacados</h2>
+            <p>Productos populares (configúralos con <strong>featured: true</strong> en data.js).</p>
+          </div>
+          <a class="btn btn-ghost" href="catalogo.html">Ver todo</a>
+        </div>
+
+        <div class="grid-4" id="featured"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <div style="font-weight:950;">Importadora GK Asia Tica</div>
+          <div class="small">© <span id="year"></span> — Todos los derechos reservados.</div>
+        </div>
+        <div class="small">
+          <!-- TODO: texto legal -->
+          Catálogo informativo. Precios y disponibilidad se confirman por mensaje.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { initNav, initHome } from "./assets/js/app.js";
+    initNav();
+    initHome();
+  </script>
+</body>
+</html>
+

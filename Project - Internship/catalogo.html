@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo | Importadora GK Asia Tica</title>
+  <meta name="description" content="Catálogo de productos: telas, cordones y sublimación al mayor." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body data-page="catalogo">
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="index.html">
+          <div class="logo" aria-hidden="true">GK</div>
+          <div>
+            <div class="brand-title">Importadora GK Asia Tica</div>
+            <div class="brand-sub">Telas • Cordones • Sublimación • Mayorista</div>
+          </div>
+        </a>
+
+        <nav>
+          <ul>
+            <li><a class="navlink" data-nav="home" href="index.html">Inicio</a></li>
+            <li><a class="navlink" data-nav="catalogo" href="catalogo.html">Catálogo</a></li>
+            <li><a class="navlink" data-nav="empresa" href="empresa.html">Empresa</a></li>
+            <li><a class="navlink" data-nav="contacto" href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="actions">
+          <a class="btn btn-primary" data-company-facebook href="#" target="_blank" rel="noopener">Cotizar</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <div class="page-hero-card">
+          <span class="badge-pill">Catálogo</span>
+          <h1 class="page-title">Explora productos por categoría</h1>
+          <p class="page-sub">
+            Busca, filtra y cuando te interese un producto, pulsa “Me interesa” para abrir su link de Facebook.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="toolbar">
+          <input id="q" class="input" type="search" placeholder="Buscar (ej: dry-fit, oxford, cordón...)" />
+          <select id="categorySelect" class="select">
+            <option value="all">Todas las categorías</option>
+          </select>
+        </div>
+
+        <div class="grid-4" id="grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <div style="font-weight:950;">Importadora GK Asia Tica</div>
+          <div class="small">© <span id="year"></span></div>
+        </div>
+        <div class="small">Catálogo informativo. Confirma stock por mensaje.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { initNav, initCatalog } from "./assets/js/app.js";
+    initNav();
+    initCatalog();
+  </script>
+</body>
+</html>
